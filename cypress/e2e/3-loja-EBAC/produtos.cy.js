@@ -3,7 +3,7 @@
 describe('Funcionalidade: Produtos', () => {
     
     beforeEach(() => {
-        cy.visit('/produtos/')
+        cy.visit('/produtos')
     });
 
 

@@ -25,7 +25,7 @@ describe('Funcionalidade: Cadastro', () => {
 
     });
 
-    it.only('Deve completar o cadastro com sucesso - Usando variaveis', () => {
+    it('Deve completar o cadastro com sucesso - Usando variaveis', () => {
         var nome = faker.person.firstName()
         var sobrenome = faker.person.lastName()
         var email = faker.internet.email(nome)
@@ -45,4 +45,24 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.woocommerce-message').should("contain", "Detalhes da conta modificados com sucesso.")
         
     });
+
+    it.only('Deve completar o cadastro com sucesso - Aplicando command', () => {
+        var nome = faker.person.firstName()
+        var sobrenome = faker.person.lastName()
+        var email = faker.internet.email(nome)
+
+        //registrando nova conta
+        cy.cadastro(email,'Testes@6789o')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('exist')
+
+        //editando dados pessoais
+        cy.get('.woocommerce-MyAccount-navigation-link--edit-account > a').click()
+        cy.get('#account_first_name').type(nome)
+        cy.get('#account_last_name').type(sobrenome)
+        cy.get('.woocommerce-Button').click()
+        cy.get('.woocommerce-message').should("contain", "Detalhes da conta modificados com sucesso.")
+        
+    });
+
+    
 });

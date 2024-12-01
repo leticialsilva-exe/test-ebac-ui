@@ -21,8 +21,15 @@ describe('Funcionalidade: Login', ()=> {
     it('Deve fazer login com sucesso - usando fixture - native way', () => {
         cy.fixture('perfil').then( dados => {
             cy.get('#username').type(dados.usuario)
-            cy.get('#password').type(dados.senha, {log:false})
+            cy.get('#password').type(dados.senha, {log:false}) //log:false esconde o dado na apresentacao do log  
             cy.get('.woocommerce-form > .button').click()
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, leticia.ebac')    
+        })
+    });
+
+    it.only('Deve fazer login com sucesso - usando commands', () => {
+        cy.fixture('perfil').then( dados => {
+            cy.login(dados.usuario, dados.senha)
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, leticia.ebac')    
         })
     });
