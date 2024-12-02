@@ -12,7 +12,7 @@ describe('Funcioncionalidade? Detalhes da conta', () => {
     it('Deve completar detalhes da conta com sucesso', () => {
         var nome = faker.person.firstName()
         var sobrenome = faker.person.lastName()
-        var nickName = faker.internet.username("Lele")
+        var nickName = faker.internet.username()
 
         cy.get('.page-title').should('exist')
         //cy.get('#main-content').should('contain','DETALHES DA CONTA')
