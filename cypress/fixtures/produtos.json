@@ -1,0 +1,21 @@
+[
+    {
+        "nomeProduto":"Aero Daily Fitness Tee",
+        "tamanho":"XS",
+        "cor":"Brown",
+        "qtd":3
+    },
+    {
+        "nomeProduto":"Aether Gym Pant",
+        "tamanho":"36",
+        "cor":"Green",
+        "qtd":2
+    },
+    {
+        "nomeProduto":"Aero Daily Fitness Tee",
+        "tamanho":"XS",
+        "cor":"Black",
+        "qtd":1
+
+    }
+]
