@@ -8,6 +8,14 @@ module.exports = defineConfig({
     },
 
     baseUrl: 'http://lojaebac.ebaconline.art.br',
-    video: true
+    video: true,
+        "reporter": "mochawesome",
+    "reporterOptions": {
+      "reportDir": "mochawesome-report",
+      "reportFilename": "index.html",
+      "overwrite": true,
+      "html": true,
+      "json": false
+    }
   },
 });
