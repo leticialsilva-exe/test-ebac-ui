@@ -40,7 +40,7 @@ describe('Funcionalidade: Produtos', () => {
         cy.get('.woocommerce-message').should('contain', qtd+' × “Aero Daily Fitness Tee” foram adicionados no seu carrinho.')
     });
 
-    it.only('Deve adicionar produto ao carrinho usando massa de dados da lista', () => {
+    it('Deve adicionar produto ao carrinho usando massa de dados da lista', () => {
         
         cy.fixture('produtos').then( dados => {
             produtosPage.buscarProduto(dados[1].nomeProduto)
