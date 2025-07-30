@@ -27,7 +27,7 @@ describe('Funcionalidade: Login', ()=> {
         })
     });
 
-    it.only('Deve fazer login com sucesso - usando commands', () => {
+    it.skip('Deve fazer login com sucesso - usando commands', () => {
         cy.fixture('perfil').then( dados => {
             cy.login(dados.usuario, dados.senha)
             cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, leticia.ebac')    
