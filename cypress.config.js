@@ -9,7 +9,7 @@ module.exports = defineConfig({
 
     baseUrl: 'http://lojaebac.ebaconline.art.br',
     video: true,
-        "reporter": "mochawesome",
+    "reporter": "mochawesome",
     "reporterOptions": {
       "reportDir": "mochawesome-report",
       "reportFilename": "index.html",
