@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run cy:run",
-    "cy:run": "npx cypress run",
-    "cy:open": "npx cypress open",
-    "cy:report": "npx mochawesome-merge ./mochawesome-report/index*.json  > mochawesome-report/index.json && npx marge mochawesome-report/index.json"
+    "e2e": "npx cypress run --env allure=true",
+    "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report",
+    "test:allure": "npm run e2e && npm run report:allure"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^9.2.0",
-    "cypress": "^13.6.0",
-    "mochawesome": "^7.1.3"
+    "cypress": "^13.6.0"  
+  },
+  "devDependencies": {
+    "allure-cypress": "^3.3.3",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.1"   
   }
 }

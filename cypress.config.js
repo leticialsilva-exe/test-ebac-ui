@@ -1,21 +1,14 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
-  projectId: 'kx4id3',
   e2e: {
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      allureWriter(on, config);
+      return config;
     },
 
     baseUrl: 'http://lojaebac.ebaconline.art.br',
-    video: true,
-    "reporter": "mochawesome",
-    "reporterOptions": {
-      "reportDir": "mochawesome-report",
-      "reportFilename": "index.html",
-      "overwrite": true,
-      "html": true, 
-      "json": false
-    }
+    video: false,
   },
 });

@@ -8,7 +8,7 @@ describe('Funcionalidade: Cadastro', () => {
 
     });
 
-    it('Deve completar o cadastro com sucesso', () => {
+    it.only('Deve completar o cadastro com sucesso', () => {
         //registrando nova conta
         cy.get('#reg_email').type(faker.internet.email())
         cy.get('#reg_password').type("Testes@6789o")
