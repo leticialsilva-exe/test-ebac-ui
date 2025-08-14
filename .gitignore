@@ -131,3 +131,7 @@ dist
 
 videos/
 screenshots/
+allure-results/*
+allure-report/*
+cypress/results/*
+mochawesome.json

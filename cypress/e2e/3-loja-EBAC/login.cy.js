@@ -34,7 +34,7 @@ describe('Funcionalidade: Login', ()=> {
         })
     });
 
-    it('Deve exibir uma mensagem de erro ao inserir o usuário inválido', () => {
+    it.only('Deve exibir uma mensagem de erro ao inserir o usuário inválido', () => {
         cy.get('#username').type('leticia.ebac@test.com')
         cy.get('#password').type('Senha321@')
         cy.get('.woocommerce-form > .button').click()
