@@ -9,7 +9,7 @@ describe('Funcioncionalidade? Detalhes da conta', () => {
             cy.login(dados.usuario,dados.senha)
         })
     });
-    it.skip('Deve completar detalhes da conta com sucesso', () => {
+    it('Deve completar detalhes da conta com sucesso', () => {
         var nome = faker.person.firstName()
         var sobrenome = faker.person.lastName()
         var nickName = faker.internet.username()

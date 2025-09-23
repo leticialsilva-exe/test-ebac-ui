@@ -131,6 +131,6 @@ dist
 
 videos/
 screenshots/
-allure-results/*
+allure-results/
 allure-report/
-cypress/results/*
+cypress/results/

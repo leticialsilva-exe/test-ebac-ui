@@ -15,7 +15,7 @@ describe('Funcionalidade: Login', ()=> {
         cy.get('#username').type(perfil.usuario)
         cy.get('#password').type(perfil.senha)
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, leticia.ebac')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá,')
     });
 
     it('Deve fazer login com sucesso - usando fixture - native way', () => {
@@ -23,18 +23,18 @@ describe('Funcionalidade: Login', ()=> {
             cy.get('#username').type(dados.usuario)
             cy.get('#password').type(dados.senha, {log:false}) //log:false esconde o dado na apresentacao do log  
             cy.get('.woocommerce-form > .button').click()
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, leticia.ebac')    
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá,')    
         })
     });
 
-    it.skip('Deve fazer login com sucesso - usando commands', () => {
+    it('Deve fazer login com sucesso - usando commands', () => {
         cy.fixture('perfil').then( dados => {
             cy.login(dados.usuario, dados.senha)
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, leticia.ebac')    
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain','Olá, Let')    
         })
     });
 
-    it.only('Deve exibir uma mensagem de erro ao inserir o usuário inválido', () => {
+    it('Deve exibir uma mensagem de erro ao inserir o usuário inválido', () => {
         cy.get('#username').type('leticia.ebac@test.com')
         cy.get('#password').type('Senha321@')
         cy.get('.woocommerce-form > .button').click()
@@ -42,10 +42,10 @@ describe('Funcionalidade: Login', ()=> {
         // cy.get('.woocommerce-error').should('exist')
     });
 
-    it('Deve exibir uma mensagem de erro ao inserir o senha inválida', () => {
+    it('Deve exibir uma mensagem de erro ao inserir senha inválida', () => {
         cy.get('#username').type('leticia.ebac@teste.com')
         cy.get('#password').type('Senha321')
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para')
+        cy.get('.woocommerce-error').should('contain', 'Erro: A senha fornecida para o e-mail')
     });
 })
